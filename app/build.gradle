@@ -3,15 +3,15 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 apply plugin: 'com.android.application'
 
 android {
-    compileSdk 36
-    buildToolsVersion "36.0.0"
+    compileSdk = 36
+    buildToolsVersion = "36.0.0"
 
     defaultConfig {
-        applicationId "com.lagradost.nicehttp.example"
-        minSdkVersion 23
-        targetSdkVersion 36
-        versionCode 1
-        versionName '0.1.0'
+        applicationId = "com.lagradost.nicehttp.example"
+        minSdkVersion = 23
+        targetSdkVersion = 36
+        versionCode = 1
+        versionName = '0.1.0'
     }
 
     buildTypes {
@@ -22,13 +22,14 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
 
     kotlin {
         compilerOptions {
             jvmTarget = JvmTarget.JVM_1_8
+            freeCompilerArgs.add("-Xannotation-default-target=param-property")
         }
     }
 
